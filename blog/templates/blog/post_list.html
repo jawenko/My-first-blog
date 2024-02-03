@@ -6,8 +6,23 @@
     <title>Blog de Flavio</title>
 </head>
 <body>
-    <h2>El Blog de Flavio Aquelarre</h2>
+    <div>
+        <h2>Bienvenido al Blog de Flavio Aquelarre</h2>
+    </div>
+
     <p>Habla causas!</p>
     <p>Soy yo! el Flav!</p>
+
+    <div>{{ posts }}</div>
+    <p>Soy un separador!</p>
+    <div>{% for post in posts %} {{ post }}{% endfor %}</div>
+    <p>Soy un separador!</p>
+    {% for post in posts %}
+    <div>
+        <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 </body>
 </html>
